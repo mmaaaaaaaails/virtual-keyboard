@@ -33,7 +33,7 @@ const Keyboard = {
         capsLock: false,
         lang: 'en',
         sound: true,
-        voice: true,
+        voice: false,
     },
 
     init() {
@@ -218,7 +218,7 @@ const Keyboard = {
                     break;
 
                 case 'voice':
-                    keyElement.innerHTML = createIconHTML('mic');
+                    keyElement.innerHTML = createIconHTML('mic_off');
                     keyElement.addEventListener('click', (e) => {
                         this.properties.voice = !this.properties.voice;
                             if (this.properties.voice) {
@@ -446,4 +446,4 @@ recognition.addEventListener('end', () => {
         recognition.stop();
     }
 });
-recognition.start();
+recognition.stop();
